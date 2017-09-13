@@ -1,0 +1,83 @@
+body {
+  background: #a0abab;
+}
+
+
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(2,3,0,0.25), 0 10px 10px rgba(2,3,0,0.22);
+}
+
+.login h2 {
+  color: #006666;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 35px;
+}
+
+
+.login h3 {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 17px;
+}
+
+.login input {
+  display: block;
+  width: 320px;
+  height: 20px;
+  padding: 5px;
+  font-size: 16px;
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-bottom: 10px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #a0abab;
+  margin-bottom: 10px;
+  text-indent: 25px;
+}
+
+.login-fields { 
+  position: relative; 
+}
+
+.login-fields .fa-user-o { 
+  position: absolute;
+  top: 2px;
+  left: 25px;
+  font-size: 15px;
+  color: #a0abab;
+  padding: 6px;
+}
+
+.login-fields .fa-lock{ 
+  position: absolute;
+  top: 47px;
+  left: 31px;
+  font-size: 19px;
+  color: #a0abab;
+}
+
+
+button {
+  width: 200px;
+  padding: 5px;
+  font-size: 17px;
+  border: none;
+  font-family: sans-serif;
+  font-weight: 700;
+  background-color: #006666;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  
+}
+
+.login-btn {
+  margin-top: 13px;
+ }
+
