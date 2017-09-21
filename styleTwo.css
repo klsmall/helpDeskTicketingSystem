@@ -1,0 +1,102 @@
+html {
+  font-family: 'Work Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.top:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+.navSection {
+  width: 100%;
+  margin-bottom: 40px;
+  padding-top: 5px;
+}
+
+.navSectionWrapper {
+  width: 100%;
+  margin: auto;
+}
+
+.navSectionWrapper ul {
+  list-style: none;
+  display: inline;
+  float: right;
+}
+
+.navSectionWrapper > ul > li {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.navSectionWrapper > ul > li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  margin: 0 lem;
+  padding: 10px;
+}
+
+.navSectionWrapper h1 {
+  float: left;
+  font-size: 35px;
+}
+
+.navSectionWrapper h1 > span {
+  font-size: 35px;
+  color: teal;
+  font-weight: 200;
+  margin-left: -5px;
+}
+
+.description h1 {
+  width: 55%;
+  font-size: 26px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+.actionBox {
+  display: inline-block;
+  width: 40%;
+  padding: 50px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  border-radius: 5px;
+  height: 100px;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 200;
+  color: teal;
+  margin-bottom: 5px;
+}
+
+.text span {
+  color: red;
+}
+
+.btn {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  color: white;
+  background-color: teal;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #66b2b2;
+  cursor: pointer;
+}
