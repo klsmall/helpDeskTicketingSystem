@@ -1,0 +1,95 @@
+@charset "ISO-8859-1";
+html {
+  font-family: 'Work Sans', sans-serif;
+}
+
+body {
+  background: #a0abab;
+}
+
+
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: white;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(2,3,0,0.25), 0 10px 10px rgba(2,3,0,0.22);
+}
+
+.login h2 {
+  color: #006666;
+  font-size: 30px;
+}
+
+
+.login h3 {
+  font-size: 14px;
+}
+
+.login input {
+  display: block;
+  width: 320px;
+  height: 20px;
+  padding: 5px;
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #a0abab;
+  
+}
+
+.login-fields { 
+  position: relative; 
+}
+
+.login-fields .fa-user-o { 
+  position: absolute;
+  top: 2px;
+  left: 25px;
+  font-size: 15px;
+  color: #a0abab;
+  padding: 6px;
+}
+
+.login-fields .fa-lock{ 
+  position: absolute;
+  top: 47px;
+  left: 31px;
+  font-size: 19px;
+  color: #a0abab;
+}
+
+select {
+  display: inline;
+  vertical-align: middle;
+  color: black;
+  border-radius: 2px;
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  padding: 2px;
+  margin: 5px;
+}
+
+button {
+  display: table;
+  vertical-align: middle;
+  width: 150px;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  font-family: 'Work Sans', sans-serif;
+  background-color: #006666;
+  color: white;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #66b2b2;
+  cursor: pointer;
+}
