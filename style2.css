@@ -1,3 +1,4 @@
+@charset "ISO-8859-1";
 html {
   font-family: 'Work Sans', sans-serif;
 }
@@ -100,3 +101,30 @@ html {
   background-color: #66b2b2;
   cursor: pointer;
 }
+
+.ticket {
+	margin: 20px;
+}
+
+.ticket fieldset {
+	border: 2px solid;
+	padding: 10px;
+}
+
+.ticket legend {
+	font-size: 30px;
+}
+
+.ticket p {
+	margin-bottom: 4px;
+}
+
+.ticket input {
+	border: 1px solid;
+	margin-bottom: 7px;
+}
+
+.ticekr select {
+	border: 1px solid;
+}
+
