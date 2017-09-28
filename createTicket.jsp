@@ -33,7 +33,7 @@
       <div class="navSectionWrapper">
         <h1 class="logo">Help Desk <span>Ticketing System</span></h1>
         <ul>
-          <li><a href="index.jsp">Home</a></li>
+          <li><a href="home.jsp">Home</a></li>
           <li><a href="createTicket.jsp">Create a Ticket</a></li>
           <li><a href="login.jsp">Logout</a></li>
           <li><a href="contact.jsp">Contact Us</a></li>
@@ -46,9 +46,11 @@
         <fieldset>
           <legend>Create Ticket:</legend>
           <p>First Name: </p>
-          <input type="text" name="firstName">
+          <input type="text" name="firstName" required>
           <p>Last Name: </p>
-          <input type="text" name="firstName">
+          <input type="text" name="lastName" required>
+          <p>Email: </p>
+          <input type="email" name="email" required>
           <p>Device Manufacturer: </p>
           <select onchange='checkManufacturer(this.value);' required>
             <option value="">Select one</option>
@@ -62,7 +64,7 @@
             <option value="Microsoft">Microsoft</option>
             <option value="other">Other</option>
           </select>
-          <input type="text" name="manufacturer" id="manufacturer" style='display:none'/>
+          <input type="text" name="manufacturer" id="manufacturer" style='display:none' required/>
           <p>Device Type: </p>
           <select onchange='checkDevice(this.value);' required>
             <option value="">Select one</option>
@@ -75,7 +77,14 @@
             <option value="Printer">Printer</option>
             <option value="other">Other</option>
           </select>
-          <input type="text" name="device" id="device" style='display:none'/>
+          <input type="text" name="device" id="device" style='display:none' required/>
+          
+          <p>Issue</p>
+          <textarea name="message" rows="10" cols="70" required>What is the problem...</textarea>
+          <br>
+          
+          <input type="submit" value="Submit">
+          <input type="reset">
         </fieldset>
       </form>
     </div>
