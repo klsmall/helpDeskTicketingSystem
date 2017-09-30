@@ -6,27 +6,27 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Create Ticket</title>
 	<link rel="stylesheet" href="style2.css">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-    <script src="https://use.fontawesome.com/297c6b8454.js"></script>
-    <script type="text/javascript">
-    	function checkManufacturer(op)
-    	{
-    		var inputOption = document.getElementById('manufacturer');
-    		if (op=="other")
-    			inputOption.style.display='block';
-    		else
-    			inputOption.style.display='none';
-    	}
-    	
-    	function checkDevice(op2)
-    	{
-    		var inputOption2 = document.getElementById('device');
-    		if (op2=="other")
-    			inputOption2.style.display='block';
-    		else
-    			inputOption2.style.display='none';
-    	}
-    </script>
+    	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    	<script src="https://use.fontawesome.com/297c6b8454.js"></script>
+    	<script type="text/javascript">
+		function checkManufacturer(op)
+		{
+			var inputOption = document.getElementById('manufacturer');
+			if (op=="other")
+				inputOption.style.display='block';
+			else
+				inputOption.style.display='none';
+		}
+
+		function checkDevice(op2)
+		{
+			var inputOption2 = document.getElementById('device');
+			if (op2=="other")
+				inputOption2.style.display='block';
+			else
+				inputOption2.style.display='none';
+		}
+    	</script>
   </head>
   <body>
     <div class="navSection top">
@@ -82,8 +82,13 @@
           <p>Issue</p>
           <textarea name="message" rows="10" cols="70" required>What is the problem...</textarea>
           <br>
+		
+	  <p>Upload photos of computer specifications and any images you have of your issue:</p>
+	  <input type="file" name="pictures" accept="image/*">
+	  <br>
+	  <br>
           
-          <input type="submit" value="Submit">
+	  <input type="submit" value="Submit">
           <input type="reset">
         </fieldset>
       </form>
