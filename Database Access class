@@ -1,0 +1,158 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
+/**
+ * class used to access the database with the posted tables
+ * @author Gavin
+ *
+ */
+public class DBAccess {
+	
+	/**
+	 * 
+	 * this method retrieves a desired field from the database at the desired table using the primary key
+	 * and its corresponding value.
+	 * 
+	 * @param field the field you are requesting from the database
+	 * @param primaryKey the primary key, the field used to located a desired entry
+	 * @param pKeyValue the value of the primary key
+	 * @param con the connection to the database
+	 * @param table the table that the fields are located in
+	 * @return returns the desired fields integer value
+	 */
+	
+	public static String retrieveString(String field, String primaryKey, String pKeyValue, java.sql.Connection con, String table){
+		String result = "NAN";
+		try {
+			java.sql.Statement stmt = con.createStatement(); 
+			String sql = "select "+ field +" from "+ table + " where " +primaryKey+" = '"+pKeyValue+"'";
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()){
+				result = rs.getString(field);
+				};
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
+	
+	/**
+	 * this method retrieves a desired field from the database at the desired table using the primary key
+	 * and its corresponding value.
+	 * 
+	 * @param field the field you are requesting from the database
+	 * @param primaryKey the primary key, the field used to located a desired entry
+	 * @param pKeyValue the value of the primary key
+	 * @param con the connection to the database
+	 * @param table the table that the fields are located in
+	 * @return returns the desired fields integer value
+	 */
+	
+	public static int retrieveInt(String field, String primaryKey, String pKeyValue, java.sql.Connection con, String table){
+		int result = Integer.MAX_VALUE;
+		try {
+			java.sql.Statement stmt = con.createStatement(); 
+			String sql = "select "+ field +" from "+ table + " where " +primaryKey+" = '"+pKeyValue+"'";
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()){
+				result = rs.getInt(field);
+				};
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
+	
+	/**
+	 * this method creates a new user entry for the users table
+	 * 
+	 * @param username the username for the new user
+	 * @param id the id for the new user
+	 * @param pass the password for the new user
+	 * @param priv the privilege level for the new user
+	 * @param con the connection to the database
+	 */
+	
+	public static void storeNewUserEntry( String username,String id, String pass, String priv,  java.sql.Connection con){
+		String table = "users";
+		try {
+			java.sql.PreparedStatement stmt = con.prepareStatement("insert into "+table+" (username, id, password, privilegeLevel) values(?,?,?,?) ");
+			stmt.setString(1, username);
+			stmt.setString(2, id);
+			stmt.setString(3, pass);
+			stmt.setString(4, priv);
+			
+			
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	/*work in progress*/
+	
+	public static void storeNewTicketEntry(String title, String username1,String username2,String id, String specs, String description, String openDate, String closeDate ,java.sql.Connection con){
+		String table = "users";
+		try {
+			java.sql.PreparedStatement stmt = con.prepareStatement("insert into "+table+" (username, id, password, privilegeLevel) values(?,?,?,?) ");
+			stmt.setString(2, id);
+			
+			
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/*work in progress*/
+	
+	public static void storeNewConChainEntry(String id, java.sql.Connection con){
+		String table = "users";
+		try {
+			java.sql.PreparedStatement stmt = con.prepareStatement("insert into "+table+" (username, id, password, privilegeLevel) values(?,?,?,?) ");
+			stmt.setString(2, id);
+			
+			
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/*work in progress*/
+	
+	public static void updateUserEntry(String pKeyValue,String primaryKey,String field, String value, java.sql.Connection con, String table){
+		try {
+			java.sql.PreparedStatement stmt = con.prepareStatement("update users set privilegeLevel = 4 where id = 2");
+			//stmt.setString(1, table);
+			//stmt.setString(2, field);
+			//stmt.setString(3, value);
+			//stmt.setString(3, primaryKey);
+			//stmt.setString(5, pKeyValue);
+			
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+} 
