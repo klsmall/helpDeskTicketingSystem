@@ -65,18 +65,17 @@ public class TicketManager {
 	 * reads in an entry from the database and will return the user object but currently doesnt
 	 * @param id the id of the ticket
 	 */
-	protected void read(long id) {
+	protected Ticket read(long id) {
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 		Ticket ticket = session.get(Ticket.class, id);
 
 		if (ticket != null) {
-			System.out.println("ticket Title: " + ticket.getTitle() + " Password: ");
-		} else {
-			System.out.println("entry " + id + " could not be found");
+			return ticket;
 		}
-
+		System.out.println("entry " + id + " could not be found");
 		session.close();
+		return null;
 	}
 	
 	/**

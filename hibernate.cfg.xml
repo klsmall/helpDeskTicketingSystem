@@ -19,6 +19,8 @@
         <!-- add classes to map from here -->
         <mapping class="com.TicketingSystem.User" />
         <mapping class="com.TicketingSystem.Ticket" />
+        <mapping class="com.TicketingSystem.TextChain" />
+        
         
     </session-factory>
 </hibernate-configuration>

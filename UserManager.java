@@ -66,19 +66,19 @@ public class UserManager {
 	 * locates the user entry in the database and will return it but currently just prints it.
 	 * @param username the username of the user
 	 */
-	protected void read(String username) {
+	protected User read(String username) {
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 		User user = session.get(User.class, username);
 
 		if (user != null) {
-			System.out.println("Username: " + user.getUsername() + " Password: " + user.getPassword()
-					+ " privilege level: " + user.getPriv());
-		} else {
-			System.out.println("entry " + username + " could not be found");
+			return user;
 		}
+			System.out.println("entry " + username + " could not be found");
+			
 
 		session.close();
+		return null;
 	}
 	
 	/**
