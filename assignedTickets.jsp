@@ -10,7 +10,7 @@
     <script src="https://use.fontawesome.com/297c6b8454.js"></script>
 </head>
 <body>
-	<div class="navSection top">
+    <div class="navSection top">
       <div class="navSectionWrapper">
         <h1 class="logo">Help Desk <span>Ticketing System</span></h1>
         <ul>
