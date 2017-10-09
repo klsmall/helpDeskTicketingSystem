@@ -24,19 +24,19 @@
     
     <div class="description">
     	<h1>Here are your assigned tickets:</h1>
-	</div>
+    </div>
 	
-	<div class="assignedTickets">
-		<table align="center">
-			<tr>
-				<th>ID #</th>
-				<th>Created</th>
-				<th>Client</th>
-				<th>Subject</th>
-				<th>Status</th>
-				<th>Priority</th>
-			</tr>
-		</table>
-	</div>
+    <div class="assignedTickets">
+	<table align="center">
+	    <tr>
+		<th>ID #</th>
+		<th>Created</th>
+		<th>Client</th>
+		<th>Subject</th>
+		<th>Status</th>
+		<th>Priority</th>
+		</tr>
+	</table>
+    </div>
 </body>
 </html>
