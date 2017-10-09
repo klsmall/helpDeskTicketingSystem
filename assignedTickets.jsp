@@ -3,9 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Assigned Tickets</title>
-	<link rel="stylesheet" href="style2.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Assigned Tickets</title>
+    <link rel="stylesheet" href="style2.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <script src="https://use.fontawesome.com/297c6b8454.js"></script>
 </head>
@@ -35,7 +35,7 @@
 		<th>Subject</th>
 		<th>Status</th>
 		<th>Priority</th>
-		</tr>
+	    </tr>
 	</table>
     </div>
 </body>
