@@ -64,7 +64,8 @@ html {
   width: 55%;
   font-size: 26px;
   font-weight: 200;
-  margin-bottom: 20px;
+  margin-left: 60px;
+  margin-bottom: 10px;
 }
 
 .actionBox {
@@ -116,15 +117,45 @@ html {
 }
 
 .ticket p {
-	margin-bottom: 4px;
+	margin-bottom: 2px;
 }
 
 .ticket input {
 	border: 1px solid;
 	margin-bottom: 7px;
+	padding: 4px;
+	font-family: 'Work Sans', sans-serif;
 }
 
-.ticekr select {
-	border: 1px solid;
+.ticket select {
+  color: black;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  padding: 4px;
+  margin-bottom: 7px;
 }
 
+.ticket textarea {
+	color: black;
+ 	border: 1px solid black;
+ 	border-radius: 2px;
+ 	font-size: 16px;
+ 	font-family: 'Work Sans', sans-serif;
+	padding: 4px;
+	margin-bottom: 7px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, th, td {
+	padding: 5px;
+    border: 1px solid black;
+}
