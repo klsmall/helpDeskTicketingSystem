@@ -34,17 +34,17 @@
     <div class="actionBox">
       <h4 class="heading">Check the status of your ticket</h4>
       <p class="text">Already filled out a ticket? Click below to check the status of your ticket. You also have the ability to chat with your technician, as well as give them a rating! </p>
-	  <a href="checkStatus.jsp"><button class="btn">Check Status <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+      <a href="checkStatus.jsp"><button class="btn">Check Status <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
     </div>
     <div class="actionBox">
       <h4 class="heading">View your assigned tickets</h4>
       <p class="text"><span>*TECH AND ADMIN ONLY*</span> You need to know which tickets are yours? Look no further! Click on the button below to view your assigned tickets.</p>
-	  <a href="assignedTickets.jsp"><button class="btn">Assigned Tickets <i class="fa fa-tasks" aria-hidden="true"></i></button></a>
+      <a href="assignedTickets.jsp"><button class="btn">Assigned Tickets <i class="fa fa-tasks" aria-hidden="true"></i></button></a>
     </div>
     <div class="actionBox">
       <h4 class="heading">View all available tickets</h4>
       <p class="text"><span>*ADMIN ONLY*</span> Click below to view and manage all available tickets. You will have access to all features, such as assigning technicians to tickets, checking technician ratings, etc.</p>
-	  <a href="allTickets.jsp"><button class="btn">All Tickets <i class="fa fa-list-ol" aria-hidden="true"></i></button></a>
+      <a href="allTickets.jsp"><button class="btn">All Tickets <i class="fa fa-list-ol" aria-hidden="true"></i></button></a>
     </div>
 </body>
 </html>
