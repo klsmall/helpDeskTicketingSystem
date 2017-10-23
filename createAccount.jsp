@@ -13,17 +13,17 @@
 	<div class="login">
       <center>
         <h2>Help Desk Ticketing System</h2>
-        <form class="card" action="home.jsp">
+        <form class="card" action="registerServlet" method="post">
           <h3>Create an Account </h3>
-            <input type="text" id="username" placeholder="Create a Username" required/>
-            <input type="password" id="password" placeholder="Create a Password" required/>
+            <input type="text" name="username" placeholder="Create a Username" required/>
+            <input type="password" name="password" placeholder="Create a Password" required/>
           <select name="userType" required>
             <option value="">Select One</option>
-            <option value="client">Client</option>
-            <option value="technician">Technician</option>
-            <option value="admin">Administrator</option>
+            <option value="1">Client</option>
+            <option value="2">Technician</option>
+            <option value="3">Administrator</option>
           </select>
-          <button class="signup-btn" value="Submit">Create Account</button>
+          <button class="signup-btn" type="submit" value="Submit">Create Account</button>
         </form> 
         <p>Already signed up?</p>
         <a class="login-btn" href="login.jsp">Login</a>

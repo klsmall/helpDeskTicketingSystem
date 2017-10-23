@@ -42,7 +42,7 @@
     </div>
     
     <div class="ticket">
-      <form action="home.jsp" method="get">
+      <form action="ticketServlet" method="post">
         <fieldset>
           <legend>Create Ticket</legend>
           <p>Client Name: </p>
@@ -52,7 +52,7 @@
           <input type="email" name="email" required>
           
           <p>Device Manufacturer: </p>
-          <select onchange='checkManufacturer(this.value);' required>
+          <select name="manufacturer" onchange='checkManufacturer(this.value);' required>
             <option value="">Select one</option>
             <option value="HP">HP</option>
             <option value="Apple">Apple</option>
@@ -67,7 +67,7 @@
           <input type="text" name="manufacturer" id="manufacturer" style='display:none' >
           
           <p>Device Type: </p>
-          <select onchange='checkDevice(this.value);' required>
+          <select name="device" onchange='checkDevice(this.value);' required>
             <option value="">Select one</option>
             <option value="Desktop">Desktop</option>
             <option value="Laptop">Laptop</option>
@@ -81,7 +81,7 @@
           <input type="text" name="device" id="device" style='display:none' />
           
           <p>General Issue: </p>
-          <select>
+          <select name="genIssue" required>
           	<option value="">Select one</option>
           	<option value="hardware">Hardware</option>
           	<option value="internet">Network & Internet</option>
