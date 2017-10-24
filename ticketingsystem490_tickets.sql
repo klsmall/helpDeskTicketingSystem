@@ -31,18 +31,11 @@ CREATE TABLE `tickets` (
   `openDate` varchar(45) NOT NULL,
   `closeDate` varchar(45) NOT NULL,
   `title` varchar(45) NOT NULL,
+  `problemCatagory` varchar(45) NOT NULL,
+  `photo` blob,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1109 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1118 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tickets`
---
-
-LOCK TABLES `tickets` WRITE;
-/*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -53,4 +46,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-09 20:13:29
+-- Dump completed on 2017-10-24 11:50:40

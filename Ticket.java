@@ -1,5 +1,7 @@
 package com.TicketingSystem;
 
+import java.io.File;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,12 +26,23 @@ public class Ticket {
 	private String openDate;
 	private String closeDate;
 	private String title;
+	private String problemCatagory;
+	private File photo;
+	
+
+	public File getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(File photo) {
+		this.photo = photo;
+	}
 
 	public Ticket(){
 		
 	}
 	
-	public Ticket(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title){
+	public Ticket(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory){
 		this.id = id;
 		this.createdBy = createdBy;
 		this.technician = technician;
@@ -38,7 +51,20 @@ public class Ticket {
 		this.openDate = openDate;
 		this.closeDate = closeDate;
 		this.title = title;
-		
+		this.problemCatagory = problemCatagory;
+	}
+	
+	public Ticket(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory,File photo){
+		this.id = id;
+		this.createdBy = createdBy;
+		this.technician = technician;
+		this.compSpecs = compSpecs;
+		this.description = description;
+		this.openDate = openDate;
+		this.closeDate = closeDate;
+		this.title = title;
+		this.problemCatagory = problemCatagory;
+
 	}
 	
 	
@@ -71,6 +97,9 @@ public class Ticket {
 
 	public String getCompSpecs() {
 		return compSpecs;
+	}
+	public String getProblemCatagory(){
+		return problemCatagory;
 	}
 
 	public void setCompSpecs(String compSpecs) {
@@ -107,6 +136,10 @@ public class Ticket {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	public void setProblemCatagory(String problemCatagory){
+		this.problemCatagory = problemCatagory;
 	}
 	
 }
