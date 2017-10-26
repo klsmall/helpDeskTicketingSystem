@@ -13,13 +13,13 @@
 	<div class="login">
       <center>
         <h2>Help Desk Ticketing System</h2>
-        <form class="card" action="home.jsp">
+        <form class="card" action="loginServlet" method="post">
           <h3>Login to Continue</h3>
           <div class="login-fields">
             <span class="fa fa-user-o"></span>
-            <input type="text" id="username" placeholder="Enter Username" required/>
+            <input type="text" name="username" placeholder="Enter Username" required/>
             <span class="fa fa-lock"></span>
-            <input type="password" id="password" placeholder="Enter Password" required/>
+            <input type="password" name="password" placeholder="Enter Password" required/>
           </div>
           <button class="login-btn" value="Submit">Login</button>
         </form> 

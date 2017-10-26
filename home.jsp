@@ -10,13 +10,39 @@
     <script src="https://use.fontawesome.com/297c6b8454.js"></script> 
 </head>
 <body>
+	<%
+		//Checks to see if user is logged in
+		Cookie[] loggedIn = request.getCookies();
+		if (loggedIn != null)
+		{
+			for (int i = 0; i < loggedIn.length; i++)
+			{
+				String name = loggedIn[i].getName();
+				String value = loggedIn[i].getValue();
+				if (name.equals("user"))
+				{
+					break;
+				}
+				if (i == (loggedIn.length - 1))
+				{
+					response.sendRedirect("login.jsp");
+				}
+				i++;
+			}
+		}
+		else
+		{
+			response.sendRedirect("login.jsp");
+			return;
+		}
+	%>
 	<div class="navSection top">
       <div class="navSectionWrapper">
         <h1 class="logo">Help Desk <span>Ticketing System</span></h1>
         <ul>
           <li><a href="home.jsp">Home</a></li>
           <li><a href="createTicket.jsp">Create a Ticket</a></li>
-          <li><a href="login.jsp">Logout</a></li>
+          <li><a href="logoutServlet">Logout</a></li>
           <li><a href="contact.jsp">Contact Us</a></li>
         </ul>
       </div>
