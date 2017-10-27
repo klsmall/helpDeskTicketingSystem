@@ -12,25 +12,10 @@
 <body>
 	<%
 		//Checks to see if user is logged in
-		Cookie[] loggedIn = request.getCookies();
-		if (loggedIn != null)
-		{
-			for (int i = 0; i < loggedIn.length; i++)
-			{
-				String name = loggedIn[i].getName();
-				String value = loggedIn[i].getValue();
-				if (name.equals("user"))
-				{
-					break;
-				}
-				if (i == (loggedIn.length - 1))
-				{
-					response.sendRedirect("login.jsp");
-				}
-				i++;
-			}
-		}
-		else
+		HttpSession sess = request.getSession(false);
+		Object name = sess.getAttribute("user");
+		
+		if (name == null)
 		{
 			response.sendRedirect("login.jsp");
 			return;
@@ -42,7 +27,7 @@
         <ul>
           <li><a href="home.jsp">Home</a></li>
           <li><a href="createTicket.jsp">Create a Ticket</a></li>
-          <li><a href="logoutServlet">Logout</a></li>
+          <li><a href="logoutServlet">Logout <%=name %></a></li>
           <li><a href="contact.jsp">Contact Us</a></li>
         </ul>
       </div>

@@ -10,11 +10,17 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
 /**
  * Servlet implementation class LoginServlet
+ * 
+ * Checks database for user, checks to see if the user/password combination matches, 
+ * and uses cookies to start a login session for the user
+ * 
+ * @author Kimberly Small
  */
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
@@ -39,22 +45,28 @@ public class LoginServlet extends HttpServlet {
 		String pWord = request.getParameter("password").trim();
 		System.out.println(uName + " " + pWord);
 		
+		PrintWriter pw = response.getWriter();
+		
 		User user = new User();
 		UserManager manager = new UserManager();
 		manager.setUp();
 		user = manager.read(uName);
 		manager.close();
 		
-		
+		//Checks to see if user exists and if the username/password combination is valid
 		if(user != null && uName.equals(user.getUsername()) && pWord.equals(user.getPassword()))
 		{
 			System.out.println("SUCCESS: Login Accepted.");
 			System.out.println("Welcome " + user.getUsername() + "!");
 	
-			//Create a Cookie to keep track of user login
-			Cookie userName = new Cookie("user", uName);
-			userName.setMaxAge(30*60); //sets length of login session to 30 minutes
-			response.addCookie(userName);
+			Short priv = user.getPriv();
+			String grantAccess = String.valueOf(priv);
+			System.out.println(grantAccess);
+			
+			//Creates a login session for the user
+			HttpSession session = request.getSession();
+			session.setAttribute("user", uName);
+			session.setAttribute("priv", grantAccess);
 			
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
 			rd.include(request, response);
@@ -64,14 +76,15 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("ERROR: Password Incorrect.");
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
 			rd.include(request, response);
+			pw.println("ERROR: Password incorrect. Please login using correct credintials.");
 		}
 		else
 		{
 			System.out.println("ERROR: User " + uName + " could not be found.");
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
 			rd.include(request, response);
+			pw.println("ERROR: User not found.");
 		}
-
+		pw.close();
 	}
-
 }
