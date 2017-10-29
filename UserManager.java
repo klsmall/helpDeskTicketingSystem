@@ -122,7 +122,14 @@ public class UserManager {
 		user.setUsername(user1.getUsername());
 		
 		if (field.equalsIgnoreCase("username")) {
-			user.setUsername(value);
+			
+			UserManager manager = new UserManager();
+			manager.setUp();
+			manager.delete(username);
+			manager.create(value, user1.getPassword(),user1.getPriv());
+			manager.close();
+			return;
+			
 		} else if (field.equalsIgnoreCase("password")) {
 			user.setPassword(value);
 		} else if (field.equalsIgnoreCase("priv")) {
