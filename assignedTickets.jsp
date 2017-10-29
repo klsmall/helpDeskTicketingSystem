@@ -31,11 +31,9 @@
 	%>
 	<div class="navSection top">
       <div class="navSectionWrapper">
-        <h1 class="logo">Help Desk <span>Ticketing System</span></h1>
+        <a href="home.jsp"><h1 class="logo">Help Desk <span>Ticketing System</span></h1></a>
         <ul>
-          <li><a href="home.jsp">Home</a></li>
-          <li><a href="createTicket.jsp">Create a Ticket</a></li>
-          <li><a href="logoutServlet">Logout <%=name %></a></li>
+          <li><a href="logoutServlet">Logout</a></li>
           <li><a href="contact.jsp">Contact Us</a></li>
         </ul>
       </div>
