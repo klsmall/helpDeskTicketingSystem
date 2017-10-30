@@ -1,10 +1,12 @@
-package com.TicketingSystem;
+package com.csci490.javaee;
 
 import java.util.Date;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -63,7 +65,11 @@ public class createTicketServlet extends HttpServlet {
 		
 		
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+			System.out.println("STATUS: Ticket created for " + client + ".");
+			
+			PrintWriter pw = response.getWriter();
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
+			rd.include(request, response);
 	}
 
 	/**

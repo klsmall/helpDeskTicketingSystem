@@ -52,7 +52,7 @@
     </div>
     
     <div class="ticket">
-      <form action="ticketServlet" method="post">
+      <form action="createTicketServlet" method="post">
         <fieldset>
           <legend>Create Ticket</legend>
           <p>Client Name: </p>

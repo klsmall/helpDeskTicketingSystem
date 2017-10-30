@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class LoginServlet
  * 
  * Checks database for user, checks to see if the user/password combination matches, 
- * and uses cookies to start a login session for the user
+ * and uses HTTP Sessions to start a login session for the user
  * 
  * @author Kimberly Small
  */
@@ -43,7 +43,6 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String uName = request.getParameter("username").trim();
 		String pWord = request.getParameter("password").trim();
-		System.out.println(uName + " " + pWord);
 		
 		PrintWriter pw = response.getWriter();
 		
