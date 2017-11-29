@@ -1,9 +1,8 @@
-package com.csci490.javaee;
+package com.TicketingSystem;
 
 import java.util.Date;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
@@ -43,10 +42,12 @@ public class createTicketServlet extends HttpServlet {
 		String subject = request.getParameter("subject");
 		String message = request.getParameter("message");
 		String problemCatagory = request.getParameter("genIssue");
+		String email = request.getParameter("email");
+		
 		File file = null;
 		
 		try{
-		 file = new File(request.getParameter("file"));
+		 file = new File(request.getParameter("img"));
 		}catch(NullPointerException e){
 			
 			file = new File("C:/Users/Gavin/Desktop/Workspace/490/490TS/no_image_thumb.gif");
@@ -60,16 +61,13 @@ public class createTicketServlet extends HttpServlet {
 		}
 		
 		
-			manager.create(0, client, tech, manufacturer, message, ft.format(date), date1, subject, problemCatagory,file);
+			manager.create(0, client, tech, manufacturer, message, ft.format(date), date1, subject, problemCatagory,device,email,file);
 			manager.close();
 		
 		
 		
-			System.out.println("STATUS: Ticket created for " + client + ".");
-			
-			PrintWriter pw = response.getWriter();
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
-			rd.include(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.sendRedirect("home.jsp");
 	}
 
 	/**

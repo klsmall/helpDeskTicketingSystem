@@ -20,7 +20,7 @@ import org.hibernate.service.Service;
 public class TicketManager {
 	protected SessionFactory sessionFactory;
 
-	protected void setUp() throws Exception {
+	public void setUp() throws Exception {
 		// A SessionFactory is set up once for an application!
 		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build(); // configures
 																											// settings
@@ -50,7 +50,7 @@ public class TicketManager {
 	 * gets all the ticket objects in the ticket table
 	 * @return an arraylist of the ticket objects
 	 */
-	protected  List  getList() {
+	public  List  getList() {
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 		@SuppressWarnings("deprecation")
@@ -72,8 +72,8 @@ public class TicketManager {
 	 * @param closeDate the date the ticket was closed
 	 * @param title the title of the ticket
 	 */
-	protected void create(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory) {
-		Ticket ticket = new Ticket(id, createdBy, technician, compSpecs, description, openDate, closeDate, title, problemCatagory);
+	protected void create(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory, String deviceType, String email) {
+		Ticket ticket = new Ticket(id, createdBy, technician, compSpecs, description, openDate, closeDate, title, problemCatagory, deviceType ,email);
 		
 		TextChainManager manager = new TextChainManager();
 		try {
@@ -108,8 +108,8 @@ public class TicketManager {
 	 * @param file the picture to be attached to the ticket
 	 */
 	
-	protected void create(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory, File file) {
-		Ticket ticket = new Ticket(id, createdBy, technician, compSpecs, description, openDate, closeDate, title, problemCatagory, file);
+	protected void create(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory, String deviceType, String email, File file) {
+		Ticket ticket = new Ticket(id, createdBy, technician, compSpecs, description, openDate, closeDate, title, problemCatagory, deviceType, email, file);
 		
 		TextChainManager manager = new TextChainManager();
 		try {
@@ -235,6 +235,10 @@ public class TicketManager {
 			ticket.setCompSpecs(value);
 		}else if(field.equalsIgnoreCase("problemCatagory")){
 			ticket.setProblemCatagory(value);
+		}else if(field.equalsIgnoreCase("deviceType")){
+			ticket.setDeviceType(value);
+		}else if(field.equalsIgnoreCase("email")){
+			ticket.setEmail(value);
 		}else{
 			System.out.println("invalid command please enter a valid field");
 		}

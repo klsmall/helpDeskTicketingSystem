@@ -28,6 +28,8 @@ public class Ticket {
 	private String title;
 	private String problemCatagory;
 	private File photo;
+	private String deviceType;
+	private String email;
 	
 
 	public File getPhoto() {
@@ -42,7 +44,7 @@ public class Ticket {
 		
 	}
 	
-	public Ticket(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory){
+	public Ticket(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory,String deviceType,String email){
 		this.id = id;
 		this.createdBy = createdBy;
 		this.technician = technician;
@@ -52,9 +54,12 @@ public class Ticket {
 		this.closeDate = closeDate;
 		this.title = title;
 		this.problemCatagory = problemCatagory;
+		this.deviceType = deviceType;
+		this.email = email;
+		
 	}
 	
-	public Ticket(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory,File photo){
+	public Ticket(long id, String createdBy, String technician, String compSpecs, String description, String openDate, String closeDate, String title, String problemCatagory,String deviceType,String email,File photo){
 		this.id = id;
 		this.createdBy = createdBy;
 		this.technician = technician;
@@ -64,6 +69,9 @@ public class Ticket {
 		this.closeDate = closeDate;
 		this.title = title;
 		this.problemCatagory = problemCatagory;
+		this.deviceType = deviceType;
+		this.email = email;
+		this.photo = photo;
 
 	}
 	
@@ -142,4 +150,19 @@ public class Ticket {
 		this.problemCatagory = problemCatagory;
 	}
 	
+	public void setEmail(String email){
+		this.email = email;
+	}
+	
+	public String getEmail(){
+		return email;
+	}
+	
+	public void setDeviceType(String device){
+		deviceType = device;
+	}
+	
+	public String getDeviceType(){
+		return deviceType;
+	}
 }

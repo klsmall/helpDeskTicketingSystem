@@ -29,23 +29,13 @@
     </script>
   </head>
   <body>
-  	<%
-		//Checks to see if user is logged in
-		HttpSession sess = request.getSession(false);
-		Object name = sess.getAttribute("user");
-		
-		if (name == null)
-		{
-			response.sendRedirect("login.jsp");
-			return;
-		}
-	
-	%>
     <div class="navSection top">
       <div class="navSectionWrapper">
-        <a href="home.jsp"><h1 class="logo">Help Desk <span>Ticketing System</span></h1></a>
+        <h1 class="logo">Help Desk <span>Ticketing System</span></h1>
         <ul>
-          <li><a href="logoutServlet">Logout</a></li>
+          <li><a href="home.jsp">Home</a></li>
+          <li><a href="createTicket.jsp">Create a Ticket</a></li>
+          <li><a href="login.jsp">Logout</a></li>
           <li><a href="contact.jsp">Contact Us</a></li>
         </ul>
       </div>
