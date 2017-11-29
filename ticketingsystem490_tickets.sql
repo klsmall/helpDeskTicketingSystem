@@ -27,15 +27,27 @@ CREATE TABLE `tickets` (
   `createdBy` varchar(45) NOT NULL,
   `technician` varchar(45) NOT NULL,
   `compSpecs` varchar(45) NOT NULL,
-  `description` varchar(45) NOT NULL,
+  `description` varchar(256) NOT NULL,
   `openDate` varchar(45) NOT NULL,
   `closeDate` varchar(45) NOT NULL,
   `title` varchar(45) NOT NULL,
   `problemCatagory` varchar(45) NOT NULL,
   `photo` blob,
+  `email` varchar(45) NOT NULL,
+  `deviceType` varchar(45) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1118 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1124 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tickets`
+--
+
+LOCK TABLES `tickets` WRITE;
+/*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
+INSERT INTO `tickets` VALUES (1122,'jeff','not Assigned','HP','so many toolbars','Wed 11.29.2017 at 12:48:35 AM EST','Open','browser','infected','¬\í\0sr\0java.io.File-¤E\r\äÿ\0L\0patht\0Ljava/lang/String;xpt\0(C:\\Users\\Gavin\\Desktop\\Mindsparkbars.pngw\0\\x','jeff@jeff.com','Laptop'),(1123,'jeff','not Assigned','HP','the printer will not print','Wed 11.29.2017 at 12:49:29 AM EST','Open','wont print','infected','¬\í\0sr\0java.io.File-¤E\r\äÿ\0L\0patht\0Ljava/lang/String;xpt\0\0w\0\\x','jeff@jeff.com','Printer');
+/*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -46,4 +58,4 @@ CREATE TABLE `tickets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-24 11:50:40
+-- Dump completed on 2017-11-29  0:54:38
