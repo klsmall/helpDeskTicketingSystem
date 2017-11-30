@@ -1,4 +1,4 @@
-package com.TicketingSystem;
+package com.csci490.javaee;
 
 import java.io.IOException;
 import java.io.PrintWriter;
