@@ -44,20 +44,14 @@
     ArrayList<Ticket> list = new ArrayList();
    	list = (ArrayList) manager.getList();
    	String user = (String) session.getAttribute("user");
-   	//int priv = Integer.parseInt((String) session.getAttribute("priv"));
+   	int priv = Integer.parseInt((String) session.getAttribute("priv"));
 	
-    ArrayList<Ticket> list2 = new ArrayList();
-    for(int x = 0; x < list.size(); x++){
-    	String createdBy = list.get(x).getCreatedBy();
-    	String tech = list.get(x).getTechnician();
-    	
-    	if(createdBy.equals(user)||(tech.equals(user))){
-    		list2.add(list.get(x));
-    	}
-    }
-    
-    request.setAttribute("list",list2);
-   
+   	if(priv == 3){
+    	request.setAttribute("list",list);
+   	}else{
+   		list = new ArrayList();
+   		
+   	}
     
     %>
 

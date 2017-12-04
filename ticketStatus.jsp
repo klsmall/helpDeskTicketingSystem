@@ -12,7 +12,7 @@
 <head>
 <link rel="shortcut icon" href="">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Assigned Tickets</title>
+    <title>Ticket Status</title>
     <link rel="stylesheet" href="style2.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <script src="https://use.fontawesome.com/297c6b8454.js"></script>
@@ -51,13 +51,14 @@
     	String createdBy = list.get(x).getCreatedBy();
     	String tech = list.get(x).getTechnician();
     	
-    	if(createdBy.equals(user)||(tech.equals(user))){
+    	if(createdBy.equals(user)){
     		list2.add(list.get(x));
     	}
     }
     
     request.setAttribute("list",list2);
-   
+    ArrayList test = (ArrayList)session.getAttribute("test");
+    System.out.println(test);
     
     %>
 

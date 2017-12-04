@@ -1,5 +1,7 @@
 package com.TicketingSystem;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -19,7 +21,7 @@ public class UserManager {
 	 * sets up the factory for the UserManager object
 	 * 
 	 */
-	protected void setUp() {
+	public void setUp() {
 		// A SessionFactory is set up once for an application!
 		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build(); // configures
 																											// settings
@@ -44,6 +46,20 @@ public class UserManager {
 	protected void close() {
 		sessionFactory.close();
 	}
+	
+	/**
+	 * gets all the ticket objects in the ticket table
+	 * @return an arraylist of the ticket objects
+	 */
+	public  List  getList() {
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+		@SuppressWarnings("deprecation")
+		
+		List  list = (List) session.createCriteria(User.class).list();
+		session.close();
+		return list;
+   }
 
 	
 	/**

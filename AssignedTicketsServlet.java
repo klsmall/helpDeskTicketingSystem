@@ -45,8 +45,8 @@ public class AssignedTicketsServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		session.setAttribute("List", list);
-		request.getRequestDispatcher("assignedTickets.jsp").forward(request,response);
+		session.setAttribute("test", list);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/assignedTickets.jsp");
 		System.out.println(list);
 	}
 }
